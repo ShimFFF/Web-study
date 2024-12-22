@@ -1,0 +1,116 @@
+/* Reset 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar 스타일 */
+.navbar {
+    display: flex; /* 정렬을 위한 플렉스박스 */
+    justify-content: space-between; /* 좌우로 공간 분배 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 로고 스타일 */
+.logo {
+    display: flex; /* 로고와 텍스트를 나란히 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.logo img {
+    height: 30px; /* 로고 이미지 크기 */
+    margin-right: 10px; /* 텍스트와 이미지 간격 */
+}
+
+.logo p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 메뉴 스타일 */
+.menu {
+    display: flex; /* 메뉴 항목을 가로로 배치, 기본 값이 가로임 */
+    /*flex-direction: column; /* 세로 방향으로 변경 */
+}
+
+.menu > *{
+    margin-left: 15px; /* 각 항목 간격 */
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer; /* 포인터 커서 */
+}
+
+.menu a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: black; /* 링크 색상 */
+    transition: color 0.3s ease; /* 색상 변화 애니메이션 */
+}
+
+.menu > *:hover {
+    color: green; /* 커서가 올라갔을 때 초록색으로 변경 */
+}
+
+.menu-button {
+    display: none; /* 기본적으로 SVG 버튼 숨김 */
+    cursor: pointer;
+    height: 20px; /* 아이콘 크기 */
+}
+
+/* 사이드 네비게이션 스타일 */
+.side-nav {
+    height: 100%; /* 화면 전체 높이 */
+    width: 0; /* 기본적으로 보이지 않음 */
+    position: fixed;
+    top: 0;
+    right: 0; /* 오른쪽에서 슬라이드 */
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 10px;
+}
+
+.side-nav a {
+    padding: 20px 5px;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    display: block;
+    transition: 0.8s;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.side-nav a:hover {
+    color: green;
+}
+
+.side-nav .top {
+    display: flex; /* Flexbox 활성화 */
+    align-items: center; /* 자식 요소를 수직 가운데 정렬 */
+    justify-content: flex-end;
+    width: 100%;
+    height: 20px;
+    /*background-color: #f4f4f4; !* 시각적으로 영역 확인용 (선택) *!*/
+}
+
+.side-nav .close-btn {
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    border-bottom: none;
+}
+
+/* 반응형: 화면 너비가 768px 이하일 때 */
+@media (max-width: 768px) {
+    .menu a {
+        display: none; /* 링크 숨기기 */
+    }
+    .menu-button {
+        display: block; /* SVG 버튼 표시 */
+    }
+}
