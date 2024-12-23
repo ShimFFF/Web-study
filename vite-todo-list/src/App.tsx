@@ -1,4 +1,7 @@
 import './App.css'
+import Home from "./pages/home/Home.tsx";
+import {Link, Route, BrowserRouter as Router, Routes} from "react-router-dom";
+import About from "./pages/about/About.tsx";
 
 // App component
 // 가정 처음 진입점 파일이 App.tsx
@@ -8,11 +11,20 @@ import './App.css'
 
 function App() {
 
-  return (
-    <>
-        <h1>Hello React</h1>
-    </>
-  )
+    return (
+        <Router>
+            <div className="App">
+                <nav>
+                    {/*Link 컴포넌트를 사용하여 페이지 이동*/}
+                    <Link to="/">Home</Link> | <Link to="/about">About</Link>
+                </nav>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App
