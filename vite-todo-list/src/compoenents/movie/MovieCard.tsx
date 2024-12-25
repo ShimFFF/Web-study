@@ -1,4 +1,5 @@
 import './MovieCard.css';
+// import styled from "styled-components";
 
 // 컴포넌트에 전달해야 할 데이터의 모양을 정의
 // MovieCardProps라는 이름으로 타입을 정의
@@ -27,8 +28,25 @@ const MovieCard = ({ movie } : MovieCardProps) => {
                 <p className="movie-name">{movie.title}</p>
                 <p className="movie-overview">{movie.overview}</p>
             </div>
+            {/*<CustomButton label='회원가입' onClick={() => console.log('심세원')} />*/}
         </div>
     );
 };
 
 export default MovieCard;
+
+// interface CustomButtonProps {
+//     label: '로그인' | '회원가입' | '다음' | '이전';
+//     onClick: () => void;
+// }
+//
+// const CustomButton = ({ label, onClick }: CustomButtonProps) => {
+//     return (
+//         <Button $color={'#000000'} onClick={onClick}>{label}</Button>
+//     )
+// }
+//
+// const Button = styled.button<{ $color: string }>`
+//     color: wheat;
+//     background-color: $color;
+// `;
