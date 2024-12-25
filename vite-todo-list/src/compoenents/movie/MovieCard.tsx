@@ -1,4 +1,3 @@
-import React from 'react';
 import './MovieCard.css';
 
 // 컴포넌트에 전달해야 할 데이터의 모양을 정의
@@ -17,7 +16,7 @@ interface MovieCardProps {
 // 컴포넌트란? -> 재사용 가능한 조각
 // React.FC<MovieCardProps>
 // -> 이 컴포넌트가 MovieCardProps라는 것에 맞는 데이터를 받아야 한다고 알려주는 부분
-const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+const MovieCard = ({ movie } : MovieCardProps) => {
     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
     // 화면에 보이는 부분

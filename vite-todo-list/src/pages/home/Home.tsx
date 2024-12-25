@@ -1,7 +1,6 @@
-import React from 'react';
 import MovieCardList from "../../compoenents/movie/MovieCardList.tsx";
 
-const Home: React.FC = () => {
+const Home = () => {
     return (
         <div className="Home">
             <h1>영화 홈</h1>

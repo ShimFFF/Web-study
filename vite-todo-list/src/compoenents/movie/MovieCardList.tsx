@@ -1,9 +1,8 @@
-import React from 'react';
 import MovieCard from './MovieCard';
 import './MovieCardList.css';
 import {MOVIES} from "../../apis/mock/movies.ts";
 
-const MovieCardList: React.FC = () => {
+const MovieCardList = () => {
     return (
         <div className="movie-list-container">
             <div className="movie-list">
