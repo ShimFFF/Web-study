@@ -1,6 +1,8 @@
+import CategoryList from "../../compoenents/category/CategoryList.tsx";
+
 const Movie = () => {
     return (
-        <h1>영화</h1>
+        <CategoryList></CategoryList>
     );
 };
 
