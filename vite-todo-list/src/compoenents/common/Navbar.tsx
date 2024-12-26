@@ -20,7 +20,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
   background-color: #1a1a1a;
   color: white;
 `;
@@ -35,6 +35,7 @@ const Logo = styled(Link)`
 const Buttons = styled.div`
   display: flex;
   gap: 10px;
+    box-sizing: border-box;
 `;
 
 const Button = styled(Link)`
@@ -44,6 +45,7 @@ const Button = styled(Link)`
   background: #333;
   border-radius: 4px;
   transition: background 0.3s;
+    box-sizing: border-box;
 
   &:hover {
     background: #555;
