@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Home = () => {
     return (
         <HomePage>
-            <h1>영화 홈</h1>
             <MovieCardList />
         </HomePage>
     );

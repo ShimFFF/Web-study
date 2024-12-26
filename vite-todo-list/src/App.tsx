@@ -1,7 +1,11 @@
 import './App.css'
+import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
+import RootLayout from "./layout/RootLayout.tsx";
+import Movie from "./pages/movie/Movie.tsx";
+import Search from "./pages/search/Search.tsx";
+import Login from "./pages/login/Login.tsx";
 import Home from "./pages/home/Home.tsx";
-import {Link, Route, BrowserRouter as Router, Routes} from "react-router-dom";
-import About from "./pages/about/About.tsx";
+import SignUp from "./pages/login/SignUp.tsx";
 
 // App component
 // 가정 처음 진입점 파일이 App.tsx
@@ -13,16 +17,16 @@ function App() {
 
     return (
         <Router>
-            <div className="App">
-                <nav>
-                    {/*Link 컴포넌트를 사용하여 페이지 이동*/}
-                    <Link to="/">Home</Link> | <Link to="/about">About</Link>
-                </nav>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                </Routes>
-            </div>
+            <Routes>
+                {/* RootLayout을 기준으로 자식 페이지 설정 */}
+                <Route path="/" element={<RootLayout />}>
+                    <Route index element={<Home />} />
+                    <Route path="movies" element={<Movie />} />
+                    <Route path="search" element={<Search />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="signup" element={<SignUp />} />
+                </Route>
+            </Routes>
         </Router>
     );
 }
