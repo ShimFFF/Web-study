@@ -3,21 +3,25 @@ export const MOVIECATEGORY : CategoryResponse[] = [
     {
         id: 1,
         title: '현재 상영중인',
-        name: 'now_playing'
+        url: 'now-playing',
+        name: 'nowPlaying'
     },
     {
         id: 2,
         title: '인기있는',
+        url: 'popular',
         name: 'popular'
     },
     {
         id: 3,
         title: '높은 평가를 받은',
-        name: 'top_rated'
+        url: 'top-rated',
+        name: 'topRated'
     },
     {
         id: 4,
         title: '개봉 예정중인',
+        url: 'upcoming',
         name: 'upcoming'
     },
 ];
@@ -29,5 +33,6 @@ export const MOVIECATEGORY : CategoryResponse[] = [
 interface CategoryResponse {
     id: number;
     title: string;
+    url: string;
     name: string;
 }

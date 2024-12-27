@@ -5,6 +5,7 @@ import Movie from "../../pages/movie/Movie.tsx";
 import Search from "../../pages/search/Search.tsx";
 import Login from "../../pages/login/Login.tsx";
 import SignUp from "../../pages/login/SignUp.tsx";
+import MovieCategory from "../../pages/movie/MovieCategory.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             {
                 path: 'movies',
                 element: <Movie />,
+            },
+            {
+                path: 'movies/:category',
+                element: <MovieCategory />, //todo: category별로 렌더링
             },
             {
                 path: 'search',

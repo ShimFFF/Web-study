@@ -1,13 +1,13 @@
 import MovieCard from './MovieCard';
 import './MovieCardList.css';
-import {MOVIES} from "../../apis/mock/movies.ts";
 import styled from "styled-components";
+import {MovieResponse} from "../../apis/dto/response/MoviesResponse.ts";
 
-const MovieCardList = () => {
+const MovieCardList = ({movieResponse}: CustomMovieCardListProps) => {
     return (
         <CardList>
-            {MOVIES.results.map((movie) => (
-                <MovieCard key={movie.id} movie={movie}/>
+            {movieResponse.map((movie) => (
+                <MovieCard key={movie.id} {...movie}/>
             ))}
         </CardList>
     );
@@ -25,3 +25,9 @@ const CardList = styled.div`
     gap: 20px;
     box-sizing: border-box;    
 `;
+
+
+interface CustomMovieCardListProps {
+    movieResponse: MovieResponse[];
+}
+

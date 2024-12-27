@@ -11,7 +11,8 @@ const CategoryList = () => {
                     <CategoryCard
                         key={category.id}
                         title={category.title}
-                        imageUrl={category.imageUrl}
+                        url={category.url}
+                        name={category.name}
                     />
                 ))}
             </CategoryListContainer>

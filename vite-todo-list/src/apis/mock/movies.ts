@@ -1,4 +1,7 @@
 // mocks 폴더에 movies.js 파일을 만든 후, 해당 파일을 사용해봅시다!
+
+import {MoviesResponse} from "../dto/response/MoviesResponse.ts";
+
 export const MOVIES: MoviesResponse = {
     "dates": {
         "maximum": "2023-09-17",
@@ -397,29 +400,4 @@ export const MOVIES: MoviesResponse = {
     ],
     "total_pages": 5,
     "total_results": 83
-}
-
-interface MoviesResponse {
-    dates: { maximum: string, minimum: string },
-    page: number,
-    results: MovieResponse[],
-    total_pages: number,
-    total_results: number
-}
-
-interface MovieResponse {
-    adult: boolean;                // 성인 콘텐츠 여부
-    backdrop_path: string;         // 영화 배경 이미지 경로
-    genre_ids: number[];           // 장르 ID 배열
-    id: number;                    // 영화 고유 ID
-    original_language: string;     // 영화의 원래 언어
-    original_title: string;        // 영화의 원래 제목
-    overview: string;              // 영화 설명
-    popularity: number;            // 영화 인기 점수
-    poster_path: string;           // 영화 포스터 이미지 경로
-    release_date: string;          // 영화 개봉일
-    title: string;                 // 영화 제목
-    video: boolean;                // 비디오 여부
-    vote_average: number;          // 평균 평점
-    vote_count: number;            // 평점 수
 }

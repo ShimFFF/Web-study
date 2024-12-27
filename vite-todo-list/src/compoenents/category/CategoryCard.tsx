@@ -1,14 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useNavigate} from "react-router-dom";
 
 interface CategoryCardProps {
     title: string;
-    imageUrl: string;
+    url: string;
+    imageUrl?: string;
+    name: string;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ title }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ title, url, name }) => {
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate(`/movies/${url}`, {state: {categoryName: name , title: title}});
+    }
+
     return (
-        <Card>
+        <Card onClick={handleNavigate}>
             {/*<Image src={imageUrl} alt={title} />*/}
             <Title>{title}</Title>
         </Card>
