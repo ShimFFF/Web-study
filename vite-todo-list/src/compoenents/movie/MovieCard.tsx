@@ -41,7 +41,7 @@ const Card = styled.div`
     width: 200px;
     margin: 10px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
 
     &:hover img {
