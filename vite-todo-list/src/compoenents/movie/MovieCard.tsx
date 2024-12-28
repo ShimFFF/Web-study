@@ -1,5 +1,6 @@
 import './MovieCard.css';
 import styled from "styled-components";
+import {useNavigate} from "react-router-dom";
 // import styled from "styled-components";
 
 // 컴포넌트에 전달해야 할 데이터의 모양을 정의
@@ -10,18 +11,24 @@ interface MovieCardProps {
     title: string; // 영화 제목
     poster_path: string; // 포스터 이미지 경로
     overview: string; // 영화 줄거리
+    movieId: number; // 영화 고유 ID
 }
 
 //영화 정보를 받아서 카드 형태로 보여주는 컴포넌트
 // 컴포넌트란? -> 재사용 가능한 조각
 // React.FC<MovieCardProps>
 // -> 이 컴포넌트가 MovieCardProps라는 것에 맞는 데이터를 받아야 한다고 알려주는 부분
-const MovieCard = ({ title, poster_path, overview } : MovieCardProps) => {
+const MovieCard = ({ title, poster_path, overview, movieId } : MovieCardProps) => {
     const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate(`/movies/detail/${movieId}`, {state: {movieId}});
+    }
 
     // 화면에 보이는 부분
     return (
-        <Card>
+        <Card onClick={handleNavigate}>
             <CustomPoster src={imageUrl} alt={title} />
             <Overlay>
                 <MovieName>{title}</MovieName>

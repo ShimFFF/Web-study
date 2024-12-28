@@ -1,9 +1,9 @@
 import CategoryList from "../../compoenents/category/CategoryList.tsx";
 
-const Movie = () => {
+const MovieMain = () => {
     return (
         <CategoryList />
     );
 };
 
-export default Movie;
+export default MovieMain;

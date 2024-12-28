@@ -7,7 +7,8 @@ const MovieCardList = ({movieResponse}: CustomMovieCardListProps) => {
     return (
         <CardList>
             {movieResponse.map((movie) => (
-                <MovieCard key={movie.id} {...movie}/>
+                <MovieCard key={movie.id} {...movie}
+                movieId={movie.id}/>
             ))}
         </CardList>
     );
