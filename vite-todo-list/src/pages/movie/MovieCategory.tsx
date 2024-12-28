@@ -1,5 +1,5 @@
 import MovieCardList from "../../compoenents/movie/MovieCardList.tsx";
-import useMovies from "../../hooks/useMovies.ts";
+import useGetMovies from "../../hooks/useGetMovies.ts";
 import {useLocation} from "react-router-dom";
 
 const MovieCategory = () => {
@@ -32,7 +32,7 @@ const MovieCategory = () => {
     // if (error) return <div>Error!</div>;
 
     // 리엑트 쿼리 사용하는 방식
-    const { data, isLoading, isError } = useMovies({ page: 1, category: categoryName });
+    const { data, isLoading, isError } = useGetMovies({ page: 1, category: categoryName });
 
     if (isLoading) return <div>Loading...</div>;
 

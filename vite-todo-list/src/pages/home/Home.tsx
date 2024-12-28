@@ -1,5 +1,5 @@
 import MovieCardList from "../../compoenents/movie/MovieCardList.tsx";
-import useMovies from "../../hooks/useMovies.ts";
+import useGetMovies from "../../hooks/useGetMovies.ts";
 
 const Home = () => {
     // 리엑트 쿼리 사용 안하는 방식
@@ -30,7 +30,7 @@ const Home = () => {
     // if (error) return <div>Error!</div>;
 
     // 리엑트 쿼리 사용하는 방식
-    const { data, isLoading, isError } = useMovies({ page: 1 });
+    const { data, isLoading, isError } = useGetMovies({ page: 1 });
 
     if (isLoading) return <div>Loading...</div>;
 
