@@ -23,7 +23,7 @@ const MovieCard = ({ title, poster_path, overview, movieId } : MovieCardProps) =
 
     const navigate = useNavigate();
     const handleNavigate = () => {
-        navigate(`/movies/detail/${movieId}`, {state: {movieId}});
+        navigate(`/movies/detail/${movieId}`);
     }
 
     // 화면에 보이는 부분
