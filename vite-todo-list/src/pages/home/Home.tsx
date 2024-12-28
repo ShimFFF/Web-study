@@ -1,7 +1,5 @@
 import MovieCardList from "../../compoenents/movie/MovieCardList.tsx";
-import {getMovies} from "../../apis/movie.ts";
-import {MoviesResponse} from "../../apis/dto/response/MoviesResponse.ts";
-import {useQuery} from "@tanstack/react-query";
+import useMovies from "../../hooks/useMovies.ts";
 
 const Home = () => {
     // 리엑트 쿼리 사용 안하는 방식
@@ -32,12 +30,7 @@ const Home = () => {
     // if (error) return <div>Error!</div>;
 
     // 리엑트 쿼리 사용하는 방식
-    // MoviesResponse 타입을 정의
-    const { data, isLoading, isError } = useQuery<MoviesResponse>({
-        queryKey: ["movies", { page: 1 }], // 캐싱 키
-        queryFn: () => getMovies(1), // 데이터를 가져오는 비동기 함수
-        staleTime: 1000 * 60 * 10, // 캐시 유효 시간
-    });
+    const { data, isLoading, isError } = useMovies({ page: 1 });
 
     if (isLoading) return <div>Loading...</div>;
 
