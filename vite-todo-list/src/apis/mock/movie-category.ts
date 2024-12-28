@@ -4,7 +4,7 @@ export const MOVIECATEGORY : CategoryResponse[] = [
         id: 1,
         title: '현재 상영중인',
         url: 'now-playing',
-        name: 'nowPlaying'
+        name: 'now_playing'
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ export const MOVIECATEGORY : CategoryResponse[] = [
         id: 3,
         title: '높은 평가를 받은',
         url: 'top-rated',
-        name: 'topRated'
+        name: 'top_rated'
     },
     {
         id: 4,

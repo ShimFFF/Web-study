@@ -1,10 +1,11 @@
+import MovieDetails from "../../compoenents/movie-detail/MovieDetails.tsx";
 
 
 const MovieDetail = () => {
 
   return (
     <div>
-      <MovieDetail/>
+      <MovieDetails/>
     </div>
   );
 }

@@ -10,7 +10,7 @@ interface UseMovieDetailsOptions {
 // MoviesResponse 타입을 정의
 const useGetMovieDetails = ({ movieId }: UseMovieDetailsOptions) => {
     return useQuery<MovieDetailResponse>({
-        queryKey: ["movies", { movieId }], // 캐싱 키
+        queryKey: ["movies-details", { movieId }], // 캐싱 키
         queryFn: () => getMovieDetails(movieId), // 데이터를 가져오는 비동기 함수
         staleTime: 1000 * 60 * 10, // 캐시 유효 시간
     });

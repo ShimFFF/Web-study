@@ -27,6 +27,7 @@ const MovieDetails = () => {
     // `data`
     const movie = movieData || null;
     const credits = creditsData || null;
+    console.log(creditsData)
 
     // movie가 null인 경우 기본값 처리
     if (!movie) {
