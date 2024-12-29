@@ -2,9 +2,8 @@ import useGetMovieDetails from "../../hooks/useGetMMovieDetails.ts";
 import MovieCastList from "./MovieCastList.tsx";
 import {useParams} from "react-router-dom";
 import styled from "styled-components";
-import MoviePoster from "./MoviePoster.tsx";
-import MovieInfo from "./MovieInfo.tsx";
 import useGetMovieCredits from "../../hooks/useGetMovieCredits.ts";
+import MovieTopBanner from "./MovieTopBanner.tsx";
 
 const MovieDetails = () => {
     const { movieId } = useParams<{ movieId: string }>();
@@ -39,14 +38,13 @@ const MovieDetails = () => {
 
     return (
         <Container>
-            <MoviePoster posterPath={movie.poster_path} title={movie.title} />
+            <MovieTopBanner
+                posterPath={movie.poster_path}
+                title={movie.title}
+                voteAverage={movie.vote_average}
+                releaseDate={movie.release_date}
+                runtime={movie.runtime}></MovieTopBanner>
             <Details>
-                <MovieInfo
-                    title={movie.title}
-                    voteAverage={movie.vote_average}
-                    releaseDate={movie.release_date}
-                    runtime={movie.runtime}
-                />
                 <MovieCastList cast={cast} />
             </Details>
         </Container>
@@ -58,6 +56,7 @@ export default MovieDetails;
 // Styled Components
 const Container = styled.div`
     display: flex;
+    flex-direction: column;
     padding: 20px;
     color: white;
     background-color: #121212;

@@ -15,6 +15,7 @@ const MovieInfo: React.FC<MovieInfoProps> = ({ title, voteAverage, releaseDate, 
                 <span>평균 {voteAverage}</span>
                 <span>{releaseDate}</span>
                 <span>{runtime}분</span>
+
             </SubInfo>
         </InfoContainer>
     );
@@ -24,7 +25,6 @@ export default MovieInfo;
 
 // Styled Components
 const InfoContainer = styled.div`
-    margin-bottom: 20px;
 `;
 
 const Title = styled.h1`
